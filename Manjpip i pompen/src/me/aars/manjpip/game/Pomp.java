@@ -107,7 +107,7 @@ public class Pomp {
 		hitbox.setBounds(x, y-25, width, height-HITBOX_Y_OFFSET);
 		
 		if(hb.intersects(hitbox)&&!m.isDeleted()) {
-			ratio += 0.45F;
+			ratio = 1.45F;
 			if(type==Manjpip.TYPE_HVIT) {
 				Stats.hviteManjpiper.addToValue(1);
 				if(isInfeced) if(!minusKondom()) {
