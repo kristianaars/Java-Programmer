@@ -268,7 +268,7 @@ public class Display extends JComponent implements Runnable, KeyListener, MouseL
 			utilline.draw(g2d);
 			points.draw(g2d);
 			if(gameOver) {				
-				g2d.setFont(new Font("Arial", 0, 40));
+				g2d.setFont(new Font("Veranda", 0, 40));
 				drawGameOver(g2d);
 				restart.draw(g2d);
 				menuButton.draw(g2d);
