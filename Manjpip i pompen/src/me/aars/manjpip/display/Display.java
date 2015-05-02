@@ -278,7 +278,7 @@ public class Display extends JComponent implements Runnable, KeyListener, MouseL
 		
 		
 		if(Frame.LOGGING) {	
-			String s = "V: Beta 1.0";
+			String s = Frame.VERSION;
 			g2d.setFont(new Font("Arial", 1, 25));
 			int x = (WIDTH-StringUtils.findWidth(s, g2d))/2;
 			g2d.setColor(Color.WHITE);

@@ -13,7 +13,7 @@ public class Frame extends JFrame implements WindowListener {
 	private Display display;
 	
 	public final static String TITLE = "Manjpip I Pompen The Game!";
-	public final static String VERSION = "Pre-Alpha 1.6";
+	public final static String VERSION = "Beta 1.0";
 	
 	public static final boolean LOGGING = false;
 	
