@@ -143,14 +143,14 @@ public class ManjpipSpawner {
 
 	}
 	
-	private float MAX_SPEED = 8;
+	private float MAX_SPEED = 10;
 	private float MIN_SPEED = 5;
 	
-	private final static int MAX_MAX_SPEED = 20;
-	private final static int MAX_MIN_SPEED = 14;
+	private final static int MAX_MAX_SPEED = 22;
+	private final static int MAX_MIN_SPEED = 13;
 	private final static int MIN_RESPAWNTIME = 25;
 	
-	private final static float INCREASE_SPEED = 0.05F;
+	private final static float INCREASE_SPEED = 4.0F;
 	
 	private int getRandomSpeed() {
 		int i = (rnd.nextInt((int)MAX_SPEED-(int)MIN_SPEED)+(int)MIN_SPEED)+1;
