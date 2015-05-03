@@ -18,13 +18,15 @@ public class Frame extends JFrame{
 		setBorderless();
 		setVisible(true);
 	}
-
-	private void setBorderless() {
+	
+	public void setSize() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		width = (int) screenSize.getWidth();
 		height = (int) screenSize.getHeight();
 		setSize(width, height);
-		setBackground(Color.BLACK);
+	}
+
+	private void setBorderless() {
 		setUndecorated(true);
 	}
 }
