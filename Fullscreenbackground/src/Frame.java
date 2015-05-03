@@ -61,18 +61,15 @@ public class Frame extends JFrame implements KeyListener{
 		setUndecorated(true);
 	}
 
-	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_F11) exit();
 	}
-
-	@Override
+	
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
+	
 	public void keyTyped(KeyEvent e) {
 		
 	}

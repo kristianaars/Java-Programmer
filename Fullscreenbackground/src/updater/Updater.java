@@ -1,4 +1,4 @@
-package me.aars.manjpip.updater;
+package updater;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.io.BufferedOutputStream;
@@ -24,13 +24,13 @@ import javax.swing.WindowConstants;
 
 public class Updater {
 	
-	final String parentpath = System.getenv("APPDATA")+"\\Manjpipipompen";
+	final String parentpath = System.getenv("APPDATA")+"/FullscreenUtility";
 	final String LOCAL_VERSION = parentpath+"/ver.txt/";
-	final String LOCAL_APPLICATION = parentpath+"\\manjpip.jar";
+	final String LOCAL_APPLICATION = parentpath+"\\fullscreen.jar";
 	final String LOCAL_APPLICATION_LINK = parentpath+"\\link.txt";
 	
-	final String VERSION_LINK = "https://dl.dropboxusercontent.com/s/04fs4aoyncthypa/version.txt?dl=0";
-	final String APPLICATION_LINK = "https://dl.dropboxusercontent.com/s/p8ufs5dcl4i5mna/link.txt?dl=0";
+	final String VERSION_LINK = "https://dl.dropboxusercontent.com/s/ygbqgcfmfhoqnxu/version.txt?dl=0";
+	final String APPLICATION_LINK = "https://dl.dropboxusercontent.com/s/5wv8ql3w48rbimr/link.txt?dl=0";
 	
 	static boolean ThreadActive = false;
 	
@@ -47,6 +47,7 @@ public class Updater {
 		File p = new File(parentpath);
 		if(!p.isDirectory()) {
 			if (!p.mkdir()) {
+				System.out.println(parentpath);
 				JOptionPane.showMessageDialog(null, "Couldt create filepath! Make sure you are running with adminrights!");
 				System.exit(0);
 			}
@@ -170,8 +171,6 @@ public class Updater {
 
 							// update progress bar
 							SwingUtilities.invokeLater(new Runnable() {
-
-								@Override
 								public void run() {
 									jProgressBar.setValue(currentProgress);
 								}

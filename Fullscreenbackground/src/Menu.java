@@ -59,9 +59,8 @@ public class Menu extends JFrame {
 	}
 
 	private ActionListener launch() {
-		JFrame parentFrame = this;
+		final JFrame parentFrame = this;
 		return new AbstractAction() {
-			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				boolean taskBar = showTaskLine.isSelected();
@@ -78,7 +77,6 @@ public class Menu extends JFrame {
 	
 	private ActionListener colorAction() {
 		return new AbstractAction() {
-			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Color c = JColorChooser.showDialog(null, "Choose color", color);
 				if(c!=null) {

@@ -156,7 +156,6 @@ public class Component extends JComponent implements Runnable{
 
 	}
 	
-	@Override
 	public void run() {
 		while(isRunning) {	
 			update();
