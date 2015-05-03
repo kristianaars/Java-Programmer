@@ -28,6 +28,7 @@ public class Menu extends JFrame {
 	}
 	
 	public Menu() {
+		super("Fullscreen Utility");
 		setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
 		setPreferredSize(new Dimension(250, 220));
 		readyFrame();

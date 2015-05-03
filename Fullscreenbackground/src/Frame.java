@@ -1,25 +1,23 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
 
-public class Frame extends JFrame{
+public class Frame extends JFrame implements KeyListener{
 	
 	public int width;
 	public int height;
 	
+	private JFrame parentFrame;
+	
 	public Frame(boolean showTaskLine, Color color, JFrame parentFrame) {
-		addWindowListener(new WindowAdapter()
-		{
-		    public void windowClosing(WindowEvent e)
-		    {
-		    	parentFrame.setVisible(true);
-		    }
-		});
+		this.parentFrame = parentFrame;
 		setBorderless();
 		addComponent(getSize(showTaskLine), color);
 		readyFrame();
@@ -27,6 +25,20 @@ public class Frame extends JFrame{
 	
 	private void readyFrame() {
 		setResizable(false);
+		
+		addKeyListener(this);
+		addWindowListener(new WindowAdapter()
+		{
+		    public void windowClosing(WindowEvent e)
+		    {
+		    	exit();
+		    }
+		});
+	}
+
+	protected void exit() {
+		setVisible(false);
+		parentFrame.setVisible(true);
 	}
 
 	private void addComponent(Dimension size, Color color) {
@@ -47,5 +59,21 @@ public class Frame extends JFrame{
 
 	private void setBorderless() {
 		setUndecorated(true);
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_F11) exit();
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
 	}
 }
