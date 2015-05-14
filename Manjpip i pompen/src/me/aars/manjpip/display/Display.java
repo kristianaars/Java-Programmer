@@ -39,7 +39,7 @@ public class Display extends JComponent implements Runnable, KeyListener, MouseL
 	private Points points;
 	private Utilityline utilline;
 	private MainMenu menu;
-	private StatsView stats;
+	public StatsView stats;
 	
 	//All views must be disabled when shop is enabled!!
 	private Shop shop;
@@ -374,6 +374,8 @@ public class Display extends JComponent implements Runnable, KeyListener, MouseL
 			shop.isHit(x, y, type);
 		} else if(menu.settings.isVisible) {
 			menu.settings.isHit(x, y, type);
+		} else if(stats.isVisible) {
+			stats.isHit(x, y, type);
 		} else if(menu.isVisible()) {
 			menu.isHit(x, y, type);
 		}else if(gameOver){

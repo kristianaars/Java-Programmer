@@ -80,7 +80,7 @@ public class MainMenu {
 		buttons[2].disable();
 		
 		buttons[3] = new Button(BUTTON_WIDTH, BUTTON_HEIGHT, Button.DEFAULT_BUTTON_COLOR, "   Stats   ");
-		buttons[3].disable();
+		buttons[3].addAction(new AbstractAction() {public void actionPerformed(ActionEvent arg0) {display.stats.isVisible=true;}});;;
 		
 		buttons[4] = new Button(BUTTON_WIDTH, BUTTON_HEIGHT, Button.DEFAULT_BUTTON_COLOR, "  Settings ");
 		buttons[4].addAction(new AbstractAction() {public void actionPerformed(ActionEvent arg0) {settings.isVisible=true;}});;;

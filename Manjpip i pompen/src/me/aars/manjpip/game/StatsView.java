@@ -3,6 +3,11 @@ package me.aars.manjpip.game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+
+import me.aars.views.button.Button;
 
 public class StatsView {
 	
@@ -14,11 +19,26 @@ public class StatsView {
 	
 	public boolean isVisible = false;
 	
+	private Button exitButton;
+	
 	public StatsView(int width, int height) {
 		this.width = width;
 		this.height = height;
+		
+		loadButtons();
 	}
 	
+	private void loadButtons() {
+		exitButton = new Button(40, 200, Button.DEFAULT_BUTTON_COLOR, " Exit ");
+		exitButton.addAction(new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				isVisible = false;
+			}
+			
+		});
+	}
+
 	public void draw(Graphics2D g) {
 		if(!isVisible) return;
 		g.setColor(backgroundColor);
@@ -39,6 +59,13 @@ public class StatsView {
 			x = StringUtils.findWidth(b, g);
 			g.drawString(b, 469-x, y);
 		}
+		
+		exitButton.draw(g);
+	}
+
+	public void isHit(int x, int y, int type) {
+		if(!isVisible) return;
+		exitButton.checkMouseInput(x, y, type);
 	}
 
 }

@@ -56,7 +56,7 @@ public class Component extends JComponent implements Runnable{
 		}
 	}
 	
-	private final static float animationSpeed = (float) 5;
+	private final static float animationSpeed = (float) 50;
 	private final static float dragSpeed = (float)0.1F;
 	
 	void screenRender() {
@@ -172,7 +172,10 @@ public class Component extends JComponent implements Runnable{
 	
 	public void setColor(Color c) {
 		if(c.getRGB()==-15584170) animate = true;
-		else color = c;
+		else {
+			animate = false;
+			color = c;
+		}
 	}
 
 }

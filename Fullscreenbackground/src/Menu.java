@@ -22,6 +22,8 @@ public class Menu extends JFrame {
 	
 	private Color color = Color.BLACK;
 	
+	private Frame fullScreen;
+	
 	public static void main(String [] args) {
 		Menu frame = new Menu();
 		frame.setVisible(true);
@@ -34,6 +36,8 @@ public class Menu extends JFrame {
 		readyFrame();
 		loadComponents();
 		setLocationRelativeTo(null);
+		
+		fullScreen = new Frame(false, color, this);
 	}
 	
 	private void loadComponents() {
@@ -63,9 +67,10 @@ public class Menu extends JFrame {
 		return new AbstractAction() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
+				Component panel = fullScreen.component;
 				boolean taskBar = showTaskLine.isSelected();
-				Frame frame = new Frame(taskBar, color, parentFrame);
-				frame.setVisible(true);
+				panel.setColor(color);
+				panel.
 			}
 		};
 	}
@@ -89,7 +94,7 @@ public class Menu extends JFrame {
 	
 	private JPanel createTitle() {
 		JTextArea heading = new JTextArea("Fullscreen Utility");
-		JTextArea underheading = new JTextArea("V 1.0 by Windsec");
+		JTextArea underheading = new JTextArea("V 1.1 by Windsec");
 		
 		heading.setFont(new Font("Veranda", 0 ,30));
 		heading.setEditable(false);

@@ -16,6 +16,8 @@ public class Frame extends JFrame implements KeyListener{
 	
 	private JFrame parentFrame;
 	
+	public Component component;
+	
 	public Frame(boolean showTaskLine, Color color, JFrame parentFrame) {
 		this.parentFrame = parentFrame;
 		setBorderless();
@@ -42,8 +44,8 @@ public class Frame extends JFrame implements KeyListener{
 	}
 
 	private void addComponent(Dimension size, Color color) {
-		Component c = new Component(size.width, size.height, color);
-		add(c);
+		component = new Component(size.width, size.height, color);
+		add(component);
 		pack();
 	}
 
