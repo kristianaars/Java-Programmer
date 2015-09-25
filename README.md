@@ -1,5 +1,5 @@
 #Popcornhair98's Java workspace
-Welcome to my Eclipse workspace!!
+<b>Welcome!</b>
 All of my content is licenced under  GNU GENERAL PUBLIC LICENSE
 
 Contact email: kristian@aars.me
